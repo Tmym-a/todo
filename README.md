@@ -4,8 +4,9 @@
 <br >
 <br >
 
-## URL
+# URL
 https://tmym-a.github.io/todo/<br >
+<br >
 
 ## 機能一覧
 - タスクの追加
