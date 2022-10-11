@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body class="bg-light">
+    <div class="container w-100">
+        <h1 class="text-center text-info my-4">TODO</h1>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px">
+            
+            <div class="container" style="background-color: pink; border-radius: 20px">
+                <p class="text-center my-2">重要かつ緊急</p>
+                <form id="js-form1" class="mb-4 mx-4">
+                    <input type="text" id="js-input1" class="form-control" placeholder="TODOを入力" autocomplete="off">
+                </form>
+                <ul class="list-group text-secondary mb-4 mx-4" id="js-ul1"></ul>            
+            </div>
+
+            <div class="container" style="background-color: lightskyblue; border-radius: 20px">
+                <p class="text-center my-2">重要だが緊急ではない</p>
+                <form id="js-form2" class="mb-4 mx-4">
+                    <input type="text" id="js-input2" class="form-control" placeholder="TODOを入力" autocomplete="off">
+                </form>
+                <ul class="list-group text-secondary mb-4 mx-4" id="js-ul2"></ul>
+            </div>
+
+            <div class="container" style="background-color: aquamarine; border-radius: 20px">
+                <p class="text-center my-2">重要ではないが緊急</p>
+                <form id="js-form3" class="mb-4 mx-4">
+                    <input type="text" id="js-input3" class="form-control" placeholder="TODOを入力" autocomplete="off">
+                </form>
+                <ul class="list-group text-secondary mb-4 mx-4" id="js-ul3"></ul>
+            </div>
+
+            <div class="container" style="background-color: navajowhite; border-radius: 20px">
+                <p class="text-center my-2">重要でも緊急でもない</p>
+                <form id="js-form4" class="mb-4 mx-4">
+                    <input type="text" id="js-input4" class="form-control" placeholder="TODOを入力" autocomplete="off">
+                </form>
+                <ul class="list-group text-secondary mb-4 mx-4" id="js-ul4"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
