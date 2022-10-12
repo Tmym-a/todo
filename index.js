@@ -1,23 +1,24 @@
 class Square {
     constructor(obj){
         const form = document.getElementById(obj.formName);
-        const input = document.getElementById(obj.inputName);
-        const ul = document.getElementById(obj.ulName);
-        const todos = JSON.parse(localStorage.getItem(obj.todosName));
+        this.input = document.getElementById(obj.inputName);
+        this.ul = document.getElementById(obj.ulName);
+        this.todos = JSON.parse(localStorage.getItem(obj.todosName));
         
-        if (todos) {
-            todos.forEach(todo => {
-                add(todo);
+        if (this.todos) {
+            this.todos.forEach(todo => {
+                this.add(todo);
             })
         }
         form.addEventListener('submit', function(event) {
             event.preventDefault();
-            console.log(input.value);
-            add();
-        });
+            console.log(this.input.value);
+            this.add();
+        }.bind(this));
+    }
 
-    function add(todo) {
-        let todoText = input.value;
+    add(todo) {
+        let todoText = this.input.value;
         if (todo) {
             todoText = todo.text;
         }
@@ -32,21 +33,22 @@ class Square {
             li.addEventListener('contextmenu', function(event) {
                 event.preventDefault();
                 li.remove();
-                saveData();
-            });
+                this.saveData();
+            }.bind(this));
     
             li.addEventListener('click', function() {
                 li.classList.toggle('text-decoration-line-through');
-                saveData();
-            });
-            ul.appendChild(li);
-            input.value = '';
-            saveData();
+                this.saveData();
+            }.bind(this));
+            
+            this.ul.appendChild(li);
+            this.input.value = '';
+            this.saveData();
         }
     }
     
-    function saveData() {
-        const lists = ul.childNodes
+    saveData() {
+        const lists = this.ul.childNodes
         let todos = [];
         lists.forEach(list =>  {
             let todo = {
@@ -55,9 +57,8 @@ class Square {
             };
             todos.push(todo);
         });
-        localStorage.setItem(obj.todosName, JSON.stringify(todos));
+        localStorage.setItem(this.todos, JSON.stringify(todos));
     }      
-    }
 }
 
 const square1 = new Square({
